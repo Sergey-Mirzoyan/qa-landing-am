@@ -19,7 +19,9 @@ import {
   Program,
   BenefitCalculator,
   Pricing,
-  Footer
+  Footer,
+  Partners,
+  Teachers
 } from "./components/GortsupComponents";
 
 export default function App() {
@@ -28,6 +30,7 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <Partners />
         <MediaMentions />
         <VideoGallery />
         <SuccessStories />
@@ -40,6 +43,7 @@ export default function App() {
         <CareerMap />
         <DayInLife />
         <Program />
+        <Teachers />
         <Pricing />
       </main>
       <Footer />

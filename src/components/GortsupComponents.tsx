@@ -52,7 +52,7 @@ const Hero = () => {
             Освойте профессию <span className="text-secondary">QA-инженера</span> с нуля
           </h1>
           <p className="text-lg md:text-xl opacity-90 mb-10 max-w-xl leading-relaxed">
-            Войди в IT без опыта и программирования. Обучение с поддержкой трудоустройства. Доход от 350K до 1M AMD в перспективе 1–3 года. Бесплатная карьерная консультация.
+            Войди в IT без опыта и программирования. Обучение с поддержкой трудоустройства. Доход от 350 000 до 1 000 000 AMD в перспективе 1–3 года. Бесплатная карьерная консультация.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <button className="bg-secondary text-white px-8 py-5 rounded-xl font-bold text-lg hover:brightness-110 transition-all shadow-xl shadow-secondary/20">
@@ -92,7 +92,7 @@ const Hero = () => {
               </div>
               <div className="h-10 w-px bg-outline-variant/30"></div>
               <div>
-                <div className="text-secondary font-bold text-2xl">350К֏</div>
+                <div className="text-secondary font-bold text-2xl">350 000֏</div>
                 <div className="text-xs uppercase font-bold tracking-tighter opacity-60">Стартовая ЗП (Junior)</div>
               </div>
             </div>
@@ -107,7 +107,7 @@ const Hero = () => {
 
 const SuccessStories = () => {
   const students = [
-    { name: "Ани, 28 лет", before: "180 000 ֏", after: "450 000 ֏", role: "Manual QA", prev: "Продавец" },
+    { name: "Ани, 28 лет", before: "180 000 ֏", after: "450 000 ֏", role: "Junior QA", prev: "Продавец" },
     { name: "Арман, 31 год", before: "250 000 ֏", after: "750 000 ֏", role: "QA Automation", prev: "Офис-менеджер" },
     { name: "Мариам, 24 года", before: "Без опыта", after: "380 000 ֏", role: "Junior QA", prev: "Выпускница вуза" },
     { name: "Гор, 29 лет", before: "220 000 ֏", after: "600 000 ֏", role: "QA Engineer", prev: "Работник склада" },
@@ -173,6 +173,26 @@ const MediaMentions = () => {
   );
 };
 
+const Partners = () => {
+  const partners = [
+    "Ameria Bank", "Idram", "VTB Bank", "ACRA", "Unibank",
+    "ServiceTitan", "Picsart", "EPAM", "Synopsys", "Krisp"
+  ];
+
+  return (
+    <section className="py-20 px-6 bg-white border-y border-outline-variant/10">
+      <div className="max-w-7xl mx-auto">
+        <h3 className="text-center text-xs font-bold uppercase tracking-widest opacity-40 mb-10">Наши партнеры и банки-участники</h3>
+        <div className="flex flex-wrap justify-center items-center gap-12 grayscale opacity-40">
+          {partners.map((p) => (
+            <span key={p} className="text-xl md:text-2xl font-black text-on-surface-variant hover:opacity-100 transition-opacity cursor-default">{p}</span>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const VideoGallery = () => {
   const videos = [
     { id: "rcPMYpyHgWM", title: "Gortsup Academy on Armenia TV" },
@@ -206,7 +226,7 @@ const VideoGallery = () => {
 
 const Reviews = () => {
   const reviews = [
-    { name: "Лилит П.", text: "Думала, что IT — только для суровых программистов. Оказалось, что в профессии тестировщика внимательность и логика важнее кода.", role: "Учитель → Manual QA" },
+    { name: "Лилит П.", text: "Думала, что IT — только для суровых программистов. Оказалось, что в профессии тестировщика внимательность и логика важнее кода.", role: "Учитель → Junior QA" },
     { name: "Тигран М.", text: "Боялся, что не справлюсь с нагрузкой. Однако кураторы поддерживали на каждом этапе. Сейчас работаю удалённо на технологический стартап.", role: "Оператор → Middle QA" },
     { name: "Нарине С.", text: "Пробовала другие курсы — не хватало практики. Здесь всё по-настоящему. Это лучшее вложение в себя — обучение окупилось через 2 месяца работы.", role: "Продажи → QA Engineer" },
   ];
@@ -322,7 +342,7 @@ const PainPoints = () => {
             <h2 className="text-3xl font-extrabold mb-10">Кому идеально подойдёт курс:</h2>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { title: "Девушкам и мамам в декрете", desc: "Удаленная работа и гибкий график, идеальный возврат на рынок труда" },
+                { title: "Мамам в декрете", desc: "Удаленная работа и гибкий график, идеальный возврат на рынок труда" },
                 { title: "Офис-менеджерам", desc: "Свобода от рутины и прозрачный карьерный рост" },
                 { title: "Бухгалтерам/Учителям", desc: "Умение работать с деталями — лучший навык для QA!" },
                 { title: "Продавцам и специалистам кол-центров", desc: "Коммуникабельность и стрессоустойчивость помогут в IT" },
@@ -461,17 +481,17 @@ const CareerMap = () => {
           {[
             {
               time: "0 — 1 год",
-              title: "Manual QA",
+              title: "Junior QA",
               icon: "bug_report",
               items: ["Изучение документации", "Написание тест-кейсов", "Поиск багов", "Тестирование API и Frontend"],
-              res: "Уверенный Junior/Middle с ЗП 350-500K AMD",
+              res: "Уверенный Junior/Middle с ЗП 350 000–500 000 AMD",
             },
             {
               time: "1 — 3 года",
               title: "QA Automation",
               icon: "terminal",
               items: ["Языки для тестирования (Python/Java)", "Пишем автотесты", "Настройка CI/CD (DevOps)"],
-              res: "Middle+ Automation с ЗП от 800K AMD",
+              res: "Middle+ Automation с ЗП от 800 000 AMD",
             },
             {
               time: "3+ года",
@@ -511,7 +531,7 @@ const DayInLife = () => {
         <h2 className="text-4xl font-extrabold mb-16 text-center">Один день из жизни QA / Automation QA</h2>
         <div className="grid md:grid-cols-4 gap-4">
           {[
-            { time: "10:00 — Утро (Удаленно)", title: "Стендап и задачи", desc: "Синхронизация команд в Slack или Zoom. Обсуждаем задачи на день с разработчиками." },
+            { time: "10:00 — Утро (Удаленно)", title: "Митап и задачи", desc: "Синхронизация команд в Slack или Zoom. Обсуждаем задачи на день с разработчиками." },
             { time: "11:30 — День", title: "Тестирование фич", desc: "Проверка новых функций приложения. Написание автотестов в коде (Python, JS) или тест-кейсов." },
             { time: "16:00 — Вечер", title: "Баг-репорты", desc: "Занесение найденных багов в Jira, обсуждение исправлений с программистами." },
           ].map((item, i) => (
@@ -533,31 +553,188 @@ const DayInLife = () => {
 };
 
 const Program = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  const modules = [
+    {
+      num: "01",
+      title: "Введение в QA",
+      desc: "Основы, жизненный цикл разработки (SDLC) и виды тестирования.",
+      details: [
+        "Роль QA-инженера в команде",
+        "Методологии разработки (Agile, Scrum, Kanban)",
+        "Жизненный цикл ПО и багов",
+        "Типы и уровни тестирования"
+      ]
+    },
+    {
+      num: "02",
+      title: "Тест-документация",
+      desc: "Создание баг-репортов, тест-кейсов и чек-листов.",
+      details: [
+        "Техники тест-дизайна",
+        "Работа в Jira и Test IT / Zephyr",
+        "Написание чек-листов и тест-кейсов",
+        "Отчеты о тестировании"
+      ]
+    },
+    {
+      num: "03",
+      title: "API-тестирование",
+      desc: "Погружение в Postman и клиент-серверную архитектуру.",
+      details: [
+        "Протоколы HTTP/HTTPS",
+        "Работа с JSON и XML",
+        "Тестирование REST-запросов в Postman",
+        "Автоматизация простых тестов в Postman"
+      ]
+    },
+    {
+      num: "04",
+      title: "Базы данных (SQL)",
+      desc: "Основы SQL и работа с данными.",
+      details: [
+        "Структура реляционных БД",
+        "Запросы SELECT, WHERE, JOIN",
+        "Работа с DDL и DML",
+        "Инструменты работы с БД (DBeaver)"
+      ]
+    },
+    {
+      num: "05",
+      title: "QA Automation & AI",
+      desc: "Автоматизация и использование AI для ускорения работы.",
+      accent: true,
+      details: [
+        "Основы Python для тестирования",
+        "Selenium / Playwright (обзор)",
+        "Использование ChatGPT для генерации тестов",
+        "Промпт-инжиниринг для QA"
+      ]
+    },
+    {
+      num: "06",
+      title: "Трудоустройство",
+      desc: "Подготовка к офферу и карьерный план.",
+      accent: true,
+      details: [
+        "Оптимизация LinkedIn и резюме",
+        "Mock-интервью с HR",
+        "Техническое собеседование",
+        "Сопровождение в поиске вакансий"
+      ]
+    }
+  ];
+
   return (
     <section className="py-24 px-6 bg-surface" id="program">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row gap-16 items-center">
+        <div className="flex flex-col lg:flex-row gap-16">
           <div className="lg:w-1/3">
-            <h2 className="text-4xl font-extrabold mb-6">Программа курса</h2>
-            <p className="text-on-surface-variant mb-8">Более 50% практики. Мы учим только актуальному на рынке стеку и готовим к реальной работе с первого месяца.</p>
-            <button className="bg-primary text-white w-full py-4 rounded-xl font-bold">Скачать подробную программу (PDF)</button>
+            <h2 className="text-4xl font-extrabold mb-6">Программа обучения</h2>
+            <p className="text-on-surface-variant mb-8 text-lg">Более 80% времени — это практика на реальных проектах. Нажмите на модуль, чтобы увидеть подробности.</p>
+            <div className="space-y-4 mb-10">
+              <div className="flex items-center gap-3 text-sm font-medium">
+                <span className="material-symbols-outlined text-primary">verified</span>
+                <span>Доступ навсегда</span>
+              </div>
+              <div className="flex items-center gap-3 text-sm font-medium">
+                <span className="material-symbols-outlined text-primary">verified</span>
+                <span>Обновление каждые 3 месяца</span>
+              </div>
+            </div>
+            <button className="bg-primary text-white w-full py-4 rounded-xl font-bold shadow-lg shadow-primary/20 hover:-translate-y-1 transition-all">
+              Скачать PDF-программу
+            </button>
           </div>
-          <div className="lg:w-2/3 grid sm:grid-cols-2 gap-6">
-            {[
-              { num: "01", title: "Введение в QA", desc: "Основы, жизненный цикл разработки (SDLC), виды тестирования и тест-дизайн." },
-              { num: "02", title: "Тест-документация", desc: "Jira, создание баг-репортов, написание мастер тест-кейсов и чек-листов." },
-              { num: "03", title: "API-тестирование", desc: "Как работает клиент-серверная архитектура. Глубокое погружение в Postman." },
-              { num: "04", title: "Базы данных", desc: "Основы SQL, запросы, DDL и DML, взаимодействие с базами данных." },
-              { num: "05", title: "QA Automation (Автотесты)", desc: "Автоматизация тестирования (Selenium / Cypress / Playwright).", accent: true },
-              { num: "06", title: "Трудоустройство", desc: "Оформление резюме, подготовка к техническим и HR-интервью (Mock-интервью).", accent: true },
-            ].map((item, i) => (
-              <div key={i} className={`bg-surface-container-low p-6 rounded-xl border-l-4 ${item.accent ? "border-secondary" : "border-primary"}`}>
-                <span className={`${item.accent ? "text-secondary" : "text-primary"} font-black text-xl mb-2 block`}>{item.num}</span>
-                <h4 className="font-bold mb-2">{item.title}</h4>
-                <p className="text-xs opacity-70">{item.desc}</p>
+          <div className="lg:w-2/3 space-y-4">
+            {modules.map((item, i) => (
+              <div
+                key={i}
+                className={`bg-surface-container-low rounded-2xl overflow-hidden border-2 transition-all cursor-pointer ${openIndex === i ? (item.accent ? "border-secondary" : "border-primary") : "border-transparent"}`}
+                onClick={() => setOpenIndex(openIndex === i ? null : i)}
+              >
+                <div className="p-6 flex items-center justify-between">
+                  <div className="flex items-center gap-6">
+                    <span className={`${item.accent ? "text-secondary" : "text-primary"} font-black text-2xl`}>{item.num}</span>
+                    <div>
+                      <h4 className="font-bold text-lg">{item.title}</h4>
+                      <p className="text-sm opacity-60">{item.desc}</p>
+                    </div>
+                  </div>
+                  <span className={`material-symbols-outlined transition-transform duration-300 ${openIndex === i ? "rotate-180" : ""}`}>
+                    expand_more
+                  </span>
+                </div>
+                {openIndex === i && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    className="px-6 pb-6 pt-2 border-t border-outline-variant/10"
+                  >
+                    <ul className="grid sm:grid-cols-2 gap-3">
+                      {item.details.map((detail, j) => (
+                        <li key={j} className="flex items-start gap-2 text-sm opacity-80">
+                          <span className={`${item.accent ? "text-secondary" : "text-primary"} text-xs mt-1`}>●</span>
+                          {detail}
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                )}
               </div>
             ))}
           </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const Teachers = () => {
+  const teachers = [
+    {
+      name: "Армен Саргсян",
+      role: "Senior QA Engineer",
+      company: "EPAM Systems",
+      exp: "8+ лет в IT",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCuBfFOw7SUiZFnxEZNyQTgV71q1cH0Y96utB23qxvomjheUS0_33vXSG0zSeKPUw_rJ0P2mhdZsaptG_QYpBSAhTzBJhHA-bpSoJ1HV3s-wc3vxEuCNCuDI-Jz1HbIdQlNCa6AdaGIC95JrOFNitNSyNZUJQbUDB0xHD0a0mK5PI53KC6jKN7pb1Du9GuQt276AMdHp6rVWHCccwiEbqHjZrM3Q9XgyWGnbSlEXQhkuZhm-wzaqrekyBuvBh-vFyXH9WGpmUy3sU4"
+    },
+    {
+      name: "Мария Галстян",
+      role: "Lead QA Automation",
+      company: "Picsart",
+      exp: "6 лет опыта",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBNQlvELy6WVWSI9Au5H1zMwF3Yfgf6GNRkB1000UNDM0VT5-AIVmnOKvhQILN5nbO0FnTV2NyBly-3Aakwk6iSK1b2sWqSpW6r4qDNYTBxFJBJXXzOfd8SDTBp4m5WCm2Np8-i65RAzm8-GyoWrQ6Krv5b7-dkRUD9YTYDr3vU9zDDqA_2nPcb6wrOwI49YbLRkaj22lYpCkznaa72XZiFe-7d14uhOfx6hOFu3UIDQCcTptcb7edPaRixWywoYY622r15ULUttEI"
+    },
+    {
+      name: "Давид Ааронян",
+      role: "QA Manager",
+      company: "ServiceTitan",
+      exp: "10+ лет опыта",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCuBfFOw7SUiZFnxEZNyQTgV71q1cH0Y96utB23qxvomjheUS0_33vXSG0zSeKPUw_rJ0P2mhdZsaptG_QYpBSAhTzBJhHA-bpSoJ1HV3s-wc3vxEuCNCuDI-Jz1HbIdQlNCa6AdaGIC95JrOFNitNSyNZUJQbUDB0xHD0a0mK5PI53KC6jKN7pb1Du9GuQt276AMdHp6rVWHCccwiEbqHjZrM3Q9XgyWGnbSlEXQhkuZhm-wzaqrekyBuvBh-vFyXH9WGpmUy3sU4"
+    }
+  ];
+
+  return (
+    <section className="py-24 px-6 bg-surface-container-low">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-extrabold mb-4">Наши преподаватели</h2>
+          <p className="text-on-surface-variant text-lg">Практики из топовых IT-компаний с реальным опытом</p>
+        </div>
+        <div className="grid md:grid-cols-3 gap-8">
+          {teachers.map((t, i) => (
+            <div key={i} className="bg-white p-6 rounded-3xl shadow-sm border border-outline-variant/10 text-center group hover:shadow-xl transition-all">
+              <div className="relative mb-6 inline-block">
+                <img src={t.image} alt={t.name} className="w-32 h-32 rounded-2xl object-cover grayscale group-hover:grayscale-0 transition-all shadow-lg" />
+                <div className="absolute -bottom-2 -right-2 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full">{t.exp}</div>
+              </div>
+              <h3 className="text-xl font-bold mb-1">{t.name}</h3>
+              <div className="text-primary font-bold text-sm mb-2">{t.role}</div>
+              <div className="text-xs opacity-50 uppercase font-bold tracking-widest">{t.company}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -582,7 +759,7 @@ const BenefitCalculator = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-extrabold mb-4">Калькулятор дохода QA-инженера</h2>
-          <p className="text-on-surface-variant text-lg">Ожидаемый рост вашей заработной платы после курса*</p>
+          <p className="text-on-surface-variant text-lg">Инструмент для понимания перспектив роста вашей зарплаты*</p>
         </div>
 
         <div className="bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-outline-variant/10 mb-12">
@@ -642,14 +819,14 @@ const BenefitCalculator = () => {
             <span className="material-symbols-outlined text-primary">trending_up</span>
             <div>
               <h4 className="font-bold text-sm mb-1">Окупаемость инвестиций</h4>
-              <p className="text-xs opacity-70">Стоимость обучения окупается всего за 2–3 месяца после трудоустройства на стартовую позицию.</p>
+              <p className="text-xs opacity-70">Инвестиции в обучение обычно окупаются уже в первые 2–3 месяца работы на позиции Junior QA.</p>
             </div>
           </div>
           <div className="flex gap-4 items-start p-6 bg-secondary/5 rounded-2xl border border-secondary/10">
             <span className="material-symbols-outlined text-secondary">verified</span>
             <div>
               <h4 className="font-bold text-sm mb-1">Карьерная поддержка</h4>
-              <p className="text-xs opacity-70">Наши карьерные менеджеры и मॉक-интервью помогут вам быстрее получить оффер.</p>
+              <p className="text-xs opacity-70">Наши карьерные менеджеры и мок-интервью помогут вам быстрее получить оффер.</p>
             </div>
           </div>
         </div>
@@ -661,44 +838,46 @@ const BenefitCalculator = () => {
 const Pricing = () => {
   const plans = [
     {
-      name: "САМОСТОЯТЕЛЬНЫЙ",
-      desc: "Для тех, кто готов учиться сам",
-      price: "400 000 ֏",
+      name: "MiNI",
+      desc: "Быстрый старт в QA и IT",
+      price: "399 000 ֏",
       features: [
-        "Доступ к образовательной платформе (24/7)",
-        "Записи лекций и видеоуроки в HD",
-        "Интерактивные задания с автопроверкой",
-        "Общий чат со студентами",
-        "Сертификат об окончании",
+        "2 месяца обучения",
+        "8 интенсивных уроков",
+        "Телеграм-чат с проверкой домашних заданий",
+        "2 реальных проекта для портфолио",
+        "Создание профессионального резюме",
+        "Оптимизация профиля в LinkedIn",
       ],
     },
     {
-      name: "С КУРАТОРОМ",
-      desc: "Оптимальный для старта карьеры",
-      price: "600 000 ֏",
+      name: "BASE",
+      desc: "Полная профессия",
+      price: "618 000 ֏",
       popular: true,
       features: [
-        "Всё, что входит в Самостоятельный",
-        "Персональный куратор на весь срок",
-        "Проверка ДЗ с детальным видео-разбором",
-        "Служба поддержки",
-        "Оформление мощного резюме",
-        { text: "Подготовка профилей в LinkedIn/Staff", accent: true },
-        { text: "Практика на реальных 4 проектах", accent: true },
+        "6 месяцев обучения",
+        "24 детальных урока",
+        "Телеграм-чат с проверкой домашних заданий",
+        "4 реальных проекта для портфолио",
+        "Создание профессионального резюме",
+        "Профили на Staff, LinkedIn, hh.ru",
+        { text: "Технический английский (1 месяц)", accent: true },
+        { text: "Вебинары по поиску заказчиков", accent: true },
       ],
     },
     {
-      name: "С ПОДДЕРЖКОЙ (PRO)",
-      desc: "Максимальный результат и помощь",
-      price: "800 000 ֏",
+      name: "PRO MAX",
+      desc: "Максимальный результат",
+      price: "810 000 ֏",
       dark: true,
       features: [
-        "Всё, что входит в Куратор тариф",
-        "Индивидуальный карьерный план",
-        "Многократные Mock-интервью 1на1",
-        "Поддержка вплоть до трудоустройства",
-        "Личный ментор (Senior QA)",
-        "Гарантия возврата / помощь до оффера**",
+        "Все преимущества тарифа BASE",
+        "Учетные записи на Staff, LinkedIn, Upwork, hh.ru",
+        "Подготовка к интервью на английском",
+        "Мини-курс по Upwork",
+        "1-2 индивидуальные сессии подготовки",
+        "Карьерная стратегия QA-инженера",
       ],
     },
   ];
@@ -719,8 +898,8 @@ const Pricing = () => {
                   Частый выбор
                 </div>
               )}
-              <div className="mb-8">
-                <h3 className={`text-2xl font-black mb-2 ${plan.dark ? "text-secondary" : ""}`}>{plan.name}</h3>
+              <div className="mb-8 font-bold">
+                <h3 className={`text-4xl font-black mb-2 ${plan.dark ? "text-secondary" : "text-primary"}`}>{plan.name}</h3>
                 <p className={`${plan.dark ? "text-white/60" : "text-on-surface-variant"} text-sm`}>{plan.desc}</p>
               </div>
               <ul className="space-y-4 mb-10 flex-grow">
@@ -745,8 +924,31 @@ const Pricing = () => {
             </div>
           ))}
         </div>
-        <p className="text-xs text-center text-on-surface-variant mt-8 max-w-2xl mx-auto">
-          Рассрочка без первого взноса. Партнеры: Ameria Bank, Idram, VTB. Решение за 1 день с минимальным пакетом документов.
+        <div className="mt-16 p-8 bg-white rounded-3xl border-2 border-primary/20 shadow-sm max-w-4xl mx-auto text-center">
+          <h4 className="font-bold text-xl mb-4">Удобная рассрочка от банков-партнеров</h4>
+          <div className="flex flex-wrap justify-center gap-8 mb-6">
+            <div className="flex flex-col items-center">
+              <span className="text-lg font-black text-primary">Ameria Bank</span>
+              <span className="text-[10px] uppercase opacity-50">0% предоплата</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <span className="text-lg font-black text-primary">Idram & Rocket Line</span>
+              <span className="text-[10px] uppercase opacity-50">Купи сейчас, плати потом</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <span className="text-lg font-black text-primary">VTB Bank</span>
+              <span className="text-[10px] uppercase opacity-50">До 24 месяцев</span>
+            </div>
+          </div>
+          <p className="text-xs text-on-surface-variant max-w-2xl mx-auto mb-6">
+            Мы помогаем с оформлением всех документов. Решение от банка приходит в течение 1 рабочего дня. Для оформления нужен только паспорт.
+          </p>
+          <button className="text-primary font-bold text-sm border-b-2 border-primary/20 hover:border-primary transition-all">
+            Рассчитать ежемесячный платеж
+          </button>
+        </div>
+        <p className="text-[10px] text-center text-on-surface-variant/40 mt-8">
+          * Окончательные условия рассрочки зависят от вашей кредитной истории и политики банка.
         </p>
       </div>
     </section>
@@ -809,5 +1011,7 @@ export {
   Program,
   BenefitCalculator,
   Pricing,
-  Footer
+  Footer,
+  Partners,
+  Teachers
 };
