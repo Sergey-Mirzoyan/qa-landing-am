@@ -13,9 +13,7 @@ import {
   StatsAM,
   PainPointsAM,
   ComparisonAM,
-  ScenarioComparisonAM,
   CareerMapAM,
-  DayInLifeAM,
   ProgramAM,
   BenefitCalculatorAM,
   PricingAM,
@@ -35,10 +33,8 @@ export default function AppAM() {
         <StatsAM />
         <PainPointsAM />
         <ComparisonAM />
-        <ScenarioComparisonAM />
         <BenefitCalculatorAM />
         <CareerMapAM />
-        <DayInLifeAM />
         <ProgramAM />
         <PricingAM />
       </main>
