@@ -1,6 +1,18 @@
 import { motion } from "motion/react";
 import { useState } from "react";
 
+// Partner & employer logos
+import logoAmeriabank from "../assets/logos/Ameriabank green.svg";
+import logoIdram from "../assets/logos/images.png";
+import logoVtb from "../assets/logos/Vtb-logo.png";
+import logoAcba from "../assets/logos/Acba-logo.png";
+import logoUnibank from "../assets/logos/2a2yfu6ff94si2slvcvl3kol9z9luzmj.jpg";
+import logoServiceTitan from "../assets/logos/ServiceTitan_logo.svg.png";
+import logoPicsart from "../assets/logos/Picsart-Logo.png";
+import logoEpam from "../assets/logos/Effective_Programming_for_America_logo.svg.png";
+import logoSynopsys from "../assets/logos/Synopsys_Logo.svg.png";
+import logoKrisp from "../assets/logos/Krisp_Logo.svg.png";
+
 const Navbar = () => {
   return (
     <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl shadow-sm">
@@ -55,18 +67,6 @@ const Hero = () => {
             <button className="bg-secondary text-white px-8 py-5 rounded-xl font-bold text-lg hover:brightness-110 transition-all shadow-xl shadow-secondary/20">
               Սկսել ուսուցումը
             </button>
-            <div className="flex items-center gap-4 bg-white/5 backdrop-blur px-6 py-4 rounded-xl">
-              <img
-                alt="Consultant"
-                className="w-10 h-10 rounded-full border-2 border-white/20"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNQlvELy6WVWSI9Au5H1zMwF3Yfgf6GNRkB1000UNDM0VT5-AIVmnOKvhQILN5nbO0FnTV2NyBly-3Aakwk6iSK1b2sWqSpW6r4qDNYTBxFJBJXXzOfd8SDTBp4m5WCm2Np8-i65RAzm8-GyoWrQ6Krv5b7-dkRUD9YTYDr3vU9zDDqA_2nPcb6wrOwI49YbLRkaj22lYpCkznaa72XZiFe-7d14uhOfx6hOFu3UIDQCcTptcb7edPaRixWywoYY622r15ULUttEI"
-                referrerPolicy="no-referrer"
-              />
-              <div className="text-sm text-left">
-                <div className="font-bold">Անի Մարտիրոսյան</div>
-                <div className="opacity-70">Gortsup-ի կարիերայի խորհրդատու</div>
-              </div>
-            </div>
           </div>
         </motion.div>
         <motion.div
@@ -79,7 +79,7 @@ const Hero = () => {
             <img
               alt="QA Workspace"
               className="w-full h-auto"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuBfFOw7SUiZFnxEZNyQTgV71q1cH0Y96utB23qxvomjheUS0_33vXSG0zSeKPUw_rJ0P2mhdZsaptG_QYpBSAhTzBJhHA-bpSoJ1HV3s-wc3vxEuCNCuDI-Jz1HbIdQlNCa6AdaGIC95JrOFNitNSyNZUJQbUDB0xHD0a0mK5PI53KC6jKN7pb1Du9GuQt276AMdHp6rVWHCccwiEbqHjZrM3Q9XgyWGnbSlEXQhkuZhm-wzaqrekyBuvBh-vFyXH9WGpmUy3sU4"
+              src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&auto=format&fit=crop"
               referrerPolicy="no-referrer"
             />
             <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur p-6 rounded-xl flex justify-between items-center text-on-background">
@@ -172,17 +172,25 @@ const MediaMentions = () => {
 
 const Partners = () => {
   const partners = [
-    "Ամերիաբանկ", "Իդրամ", "ՎՏԲ Բանկ", "ԱՔՌԱ", "Յունիբանկ",
-    "ServiceTitan", "Picsart", "EPAM", "Synopsys", "Krisp"
+    { name: "Ամերիաբանկ", logo: logoAmeriabank },
+    { name: "Իդրամ", logo: logoIdram },
+    { name: "ՎՏԲ Բանկ", logo: logoVtb },
+    { name: "ԱՔՌԱ", logo: logoAcba },
+    { name: "Յունիբանկ", logo: logoUnibank },
+    { name: "ServiceTitan", logo: logoServiceTitan },
+    { name: "Picsart", logo: logoPicsart },
+    { name: "EPAM", logo: logoEpam },
+    { name: "Synopsys", logo: logoSynopsys },
+    { name: "Krisp", logo: logoKrisp },
   ];
 
   return (
     <section className="py-20 px-6 bg-white border-y border-outline-variant/10">
       <div className="max-w-7xl mx-auto">
         <h3 className="text-center text-xs font-bold uppercase tracking-widest opacity-40 mb-10">Մեր գործընկերները և մասնակից բանկերը</h3>
-        <div className="flex flex-wrap justify-center items-center gap-12 grayscale opacity-40">
+        <div className="flex flex-wrap justify-center items-center gap-10">
           {partners.map((p) => (
-            <span key={p} className="text-xl md:text-2xl font-black text-on-surface-variant hover:opacity-100 transition-opacity cursor-default">{p}</span>
+            <img key={p.name} src={p.logo} alt={p.name} className="h-8 md:h-10 object-contain opacity-70 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" />
           ))}
         </div>
       </div>
@@ -277,12 +285,8 @@ const Stats = () => {
             <h2 className="text-3xl font-extrabold mb-10">Ակադեմիան թվերով</h2>
             <div className="grid grid-cols-2 gap-8">
               <div>
-                <div className="text-5xl font-black text-secondary mb-2">1500+</div>
+                <div className="text-5xl font-black text-secondary mb-2">2500+</div>
                 <div className="text-sm opacity-60">ուսանող՝ սովորել են 2022 թվականից ի վեր</div>
-              </div>
-              <div>
-                <div className="text-5xl font-black text-primary mb-2">≤ 3 ամիս</div>
-                <div className="text-sm opacity-60">շրջանավարտների աշխատանքի տեղավորման միջին ժամկետը</div>
               </div>
               <div>
                 <div className="text-5xl font-black text-secondary mb-2">450+</div>
@@ -290,16 +294,23 @@ const Stats = () => {
               </div>
               <div>
                 <div className="text-5xl font-black text-primary mb-2">9.2</div>
-                <div className="text-sm opacity-60">մեզ հանձնարարելու պատրաստակամությունը (NPS)</div>
+                <div className="text-sm opacity-60">մեզ խորհուրդ տալու պատրաստակամությունը (NPS)</div>
               </div>
             </div>
           </div>
           <div>
             <h2 className="text-3xl font-extrabold mb-10 text-center lg:text-left">Որտե՞ղ են աշխատում շրջանավարտները</h2>
             <div className="grid grid-cols-2 gap-4">
-              {["EPAM", "Synopsys", "Picsart", "ServiceTitan", "Microsoft", "Krisp"].map((b) => (
-                <div key={b} className="bg-white/5 p-8 rounded-xl flex items-center justify-center font-bold text-xl hover:bg-white/10 transition-colors">
-                  {b}
+              {[
+                { name: "EPAM", logo: logoEpam },
+                { name: "Synopsys", logo: logoSynopsys },
+                { name: "Picsart", logo: logoPicsart },
+                { name: "ServiceTitan", logo: logoServiceTitan },
+                { name: "Krisp", logo: logoKrisp },
+                { name: "Microsoft", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/512px-Microsoft_logo.svg.png" },
+              ].map((c) => (
+                <div key={c.name} className="bg-white p-6 rounded-xl flex items-center justify-center hover:bg-white/90 transition-colors shadow-sm">
+                  <img src={c.logo} alt={c.name} className="h-8 md:h-10 object-contain opacity-90 hover:opacity-100" />
                 </div>
               ))}
             </div>
@@ -552,75 +563,62 @@ const DayInLife = () => {
 const Program = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
-  const modules = [
+  type Module = {
+    num: string; title: string; desc: string; accent?: boolean;
+    skills: string[]; tools: string[]; artifacts: string[];
+  };
+
+  const modules: Module[] = [
     {
       num: "01",
       title: "Ներածություն QA-ի աշխարհ",
       desc: "Հիմունքներ, մշակման կենսապտույտը (SDLC) և թեստավորման տեսակները:",
-      details: [
-        "QA-ինժեների դերը թիմում",
-        "Մշակման մեթոդաբանություններ (Agile, Scrum, Kanban)",
-        "Ծրագրային ապահովման և բագերի կենսապտույտը",
-        "Թեստավորման տիպերը և մակարդակները"
-      ]
+      skills: ["QA-ինժեների դերը թիմում", "Agile / Scrum / Kanban", "Բագի կենսապտույտ", "Smoke / Regression / Sanity"],
+      tools: ["Jira", "Confluence", "Trello", "Slack"],
+      artifacts: ["Թեստלաբակութային պլան", "Արձագանք կընդհակութային հաշվարկներ"],
     },
     {
       num: "02",
       title: "Թեստային փաստաթղթավորում",
       desc: "Բագ-ռեպորտների, թեստ-քեյսերի և չեք-լիստերի ստեղծում:",
-      details: [
-        "Թեստ-դիզայնի տեխնիկաներ",
-        "Աշխատանք Jira և Test IT / Zephyr համակարգերում",
-        "Չեք-լիստերի և թեստ-քեյսերի գրում",
-        "Թեստավորման հաշվետվություններ"
-      ]
+      skills: ["Թեստ-դիզայնի տեխնիկաներ (EP, BVA, Pairwise)", "Բագ-ռեպորտ (Priority, Severity)", "UI/UX չեքլիստ", "TestRail կազմկերպ"],
+      tools: ["Jira", "Test IT", "TestRail", "Zephyr"],
+      artifacts: ["Թեստ-քեյս-լիստ", "Չեք-լիստ", "Բագ-ռեփորթ", "Թեղթղ. հաշվետվություններ"],
     },
     {
       num: "03",
       title: "API թեստավորում",
       desc: "Խորացում Postman-ի և հաճախորդ-սերվեր ճարտարապետության մեջ:",
-      details: [
-        "HTTP/HTTPS արձանագրություններ",
-        "Աշխատանք JSON և XML ձևաչափերի հետ",
-        "REST հարցումների թեստավորում Postman-ում",
-        "Պարզ թեստերի ավտոմատացում Postman-ում"
-      ]
+      skills: ["HTTP մեթոդներ (GET, POST, PUT, DELETE)", "Status codes ու սխալների կարգ.", "JSON/XML հ/ու ձևաչ.", "Authorization (API Key, Bearer Token)", "REST vs SOAP, Swagger"],
+      tools: ["Postman", "Swagger", "Insomnia"],
+      artifacts: ["Postman Collection", "Ավտոմ. API թեստեր", "Test Report"],
     },
     {
       num: "04",
       title: "Տվյալների բազաներ (SQL)",
       desc: "SQL-ի հիմունքները և աշխատանք տվյալների հետ:",
-      details: [
-        "Ռելյացիոն տվյալների բազաների կառուցվածքը",
-        "SELECT, WHERE, JOIN հարցումներ",
-        "Աշխատանք DDL և DML հրամանների հետ",
-        "Գործիքներ տվյալների բազաների համար (DBeaver)"
-      ]
+      skills: ["SELECT, WHERE, GROUP BY, ORDER BY", "JOIN-ներ (INNER, LEFT, RIGHT)", "Տվ. բազայի կառուց.", "INSERT / UPDATE / DELETE", "SQL թ. դեպ. կիர."],
+      tools: ["DBeaver", "PostgreSQL", "MySQL"],
+      artifacts: ["SQL հ֊ումների հ/ու.", "Տ. բազ. valid. կ/ու."],
     },
     {
       num: "05",
       title: "QA Automation & AI",
-      desc: "Ավտոմատացում և AI-ի (Արհեստական բանականություն) կիրառում աշխատանքի արագացման համար:",
+      desc: "Ավտոմատացում և AI-ի (Արհ. բանականություն) կիրառում արագ. համար:",
       accent: true,
-      details: [
-        "Python-ի հիմունքները թեստավորման համար",
-        "Selenium / Playwright (ակնարկ)",
-        "ChatGPT-ի կիրառում թեստերի գեներացման համար",
-        "Փրոմփթ-ինժեներինգ QA-ի համար"
-      ]
+      skills: ["Python հիմ. (ֆ֊ններ, OOP, մոդ.)", "Selenium WebDriver / Playwright", "pytest շ/ամբ.", "ChatGPT / AI թ. գ/ելու", "CI/CD (GitHub Actions)"],
+      tools: ["Python", "Selenium", "Playwright", "pytest", "GitHub Actions", "ChatGPT"],
+      artifacts: ["Ավ/թ. թ. ն/ախ.", "CI/CD Pipeline", "AI-գ/աց. թ-քեյս."],
     },
     {
       num: "06",
       title: "Աշխատանքի տեղավորում",
       desc: "Պատրաստում աշխատանքի առաջարկին և կարիերայի պլանավորում:",
       accent: true,
-      details: [
-        "LinkedIn-ի և ռեզյումեի օպտիմալացում",
-        "Փորձնական հարցազրույց HR-ի հետ",
-        "Տեխնիկական հարցազրույց",
-        "Աջակցություն թափուր հաստատիքների որոնման հարցում"
-      ]
-    }
+      skills: ["LinkedIn-ի ու ռ/ումի օ/ացում", "HR մոք-հ/ազ. QA թ/ատ.", "Տեխ. հ/ազ. ա/ներով", "Բ. հաստ. որ. ա/ութ.", "Staff.am / LinkedIn / hh.ru"],
+      tools: ["LinkedIn", "Staff.am", "hh.ru", "Canva (CV)"],
+      artifacts: ["Կ/ած CV", "Պ/ֆոլ.", "LinkedIn-էջ"],
+    },
   ];
 
   return (
@@ -667,71 +665,40 @@ const Program = () => {
                   <motion.div
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
-                    className="px-6 pb-6 pt-2 border-t border-outline-variant/10"
+                    className="px-6 pb-6 pt-2 border-t border-outline-variant/10 space-y-5"
                   >
-                    <ul className="grid sm:grid-cols-2 gap-3">
-                      {item.details.map((detail, j) => (
-                        <li key={j} className="flex items-start gap-2 text-sm opacity-80">
-                          <span className={`${item.accent ? "text-secondary" : "text-primary"} text-xs mt-1`}>●</span>
-                          {detail}
-                        </li>
-                      ))}
-                    </ul>
+                    <div>
+                      <div className="text-[10px] font-bold uppercase tracking-widest opacity-40 mb-2">Skills</div>
+                      <ul className="grid sm:grid-cols-2 gap-2">
+                        {item.skills.map((s, j) => (
+                          <li key={j} className="flex items-start gap-2 text-sm opacity-80">
+                            <span className={`${item.accent ? "text-secondary" : "text-primary"} text-xs mt-1`}>●</span>
+                            {s}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <div className="text-[10px] font-bold uppercase tracking-widest opacity-40 mb-2">Tools</div>
+                      <div className="flex flex-wrap gap-2">
+                        {item.tools.map((t, j) => (
+                          <span key={j} className={`text-xs font-bold px-3 py-1 rounded-full ${item.accent ? "bg-secondary/10 text-secondary" : "bg-primary/10 text-primary"}`}>{t}</span>
+                        ))}
+                      </div>
+                    </div>
+                    <div>
+                      <div className="text-[10px] font-bold uppercase tracking-widest opacity-40 mb-2">Artifacts</div>
+                      <div className="flex flex-wrap gap-2">
+                        {item.artifacts.map((a, j) => (
+                          <span key={j} className="text-xs px-3 py-1 bg-surface-container-highest rounded-full opacity-70">📄 {a}</span>
+                        ))}
+                      </div>
+                    </div>
                   </motion.div>
                 )}
               </div>
             ))}
           </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-const Teachers = () => {
-  const teachers = [
-    {
-      name: "Արմեն Սարգսյան",
-      role: "Senior QA Engineer",
-      company: "EPAM Systems",
-      exp: "8+ տարի IT ոլորտում",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCuBfFOw7SUiZFnxEZNyQTgV71q1cH0Y96utB23qxvomjheUS0_33vXSG0zSeKPUw_rJ0P2mhdZsaptG_QYpBSAhTzBJhHA-bpSoJ1HV3s-wc3vxEuCNCuDI-Jz1HbIdQlNCa6AdaGIC95JrOFNitNSyNZUJQbUDB0xHD0a0mK5PI53KC6jKN7pb1Du9GuQt276AMdHp6rVWHCccwiEbqHjZrM3Q9XgyWGnbSlEXQhkuZhm-wzaqrekyBuvBh-vFyXH9WGpmUy3sU4"
-    },
-    {
-      name: "Մարիա Գալստյան",
-      role: "Lead QA Automation",
-      company: "Picsart",
-      exp: "6 տարվա փորձ",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBNQlvELy6WVWSI9Au5H1zMwF3Yfgf6GNRkB1000UNDM0VT5-AIVmnOKvhQILN5nbO0FnTV2NyBly-3Aakwk6iSK1b2sWqSpW6r4qDNYTBxFJBJXXzOfd8SDTBp4m5WCm2Np8-i65RAzm8-GyoWrQ6Krv5b7-dkRUD9YTYDr3vU9zDDqA_2nPcb6wrOwI49YbLRkaj22lYpCkznaa72XZiFe-7d14uhOfx6hOFu3UIDQCcTptcb7edPaRixWywoYY622r15ULUttEI"
-    },
-    {
-      name: "Դավիթ Ահարոնյան",
-      role: "QA Manager",
-      company: "ServiceTitan",
-      exp: "10+ տարվա փորձ",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCuBfFOw7SUiZFnxEZNyQTgV71q1cH0Y96utB23qxvomjheUS0_33vXSG0zSeKPUw_rJ0P2mhdZsaptG_QYpBSAhTzBJhHA-bpSoJ1HV3s-wc3vxEuCNCuDI-Jz1HbIdQlNCa6AdaGIC95JrOFNitNSyNZUJQbUDB0xHD0a0mK5PI53KC6jKN7pb1Du9GuQt276AMdHp6rVWHCccwiEbqHjZrM3Q9XgyWGnbSlEXQhkuZhm-wzaqrekyBuvBh-vFyXH9WGpmUy3sU4"
-    }
-  ];
-
-  return (
-    <section className="py-24 px-6 bg-surface-container-low">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-extrabold mb-4">Մեր դասախոսները</h2>
-          <p className="text-on-surface-variant text-lg">Պրակտիկ մասնագետներ առաջատար IT ընկերություններից՝ իրական փորձով:</p>
-        </div>
-        <div className="grid md:grid-cols-3 gap-8">
-          {teachers.map((t, i) => (
-            <div key={i} className="bg-white p-6 rounded-3xl shadow-sm border border-outline-variant/10 text-center group hover:shadow-xl transition-all">
-              <div className="relative mb-6 inline-block">
-                <img src={t.image} alt={t.name} className="w-32 h-32 rounded-2xl object-cover grayscale group-hover:grayscale-0 transition-all shadow-lg" />
-                <div className="absolute -bottom-2 -right-2 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full">{t.exp}</div>
-              </div>
-              <h3 className="text-xl font-bold mb-1">{t.name}</h3>
-              <div className="text-primary font-bold text-sm mb-2">{t.role}</div>
-              <div className="text-xs opacity-50 uppercase font-bold tracking-widest">{t.company}</div>
-            </div>
-          ))}
         </div>
       </div>
     </section>
@@ -810,23 +777,6 @@ const BenefitCalculator = () => {
             })}
           </div>
         </div>
-
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <div className="flex gap-4 items-start p-6 bg-primary/5 rounded-2xl border border-primary/10">
-            <span className="material-symbols-outlined text-primary">trending_up</span>
-            <div>
-              <h4 className="font-bold text-sm mb-1">Ներդրումների հետգնում</h4>
-              <p className="text-xs opacity-70">Ուսուցման մեջ կատարված ներդրումները սովորաբար հետ են գնվում Junior QA-ի հաստիքով աշխատանքի անցնելու առաջին 2–3 ամիսների ընթացքում:</p>
-            </div>
-          </div>
-          <div className="flex gap-4 items-start p-6 bg-secondary/5 rounded-2xl border border-secondary/10">
-            <span className="material-symbols-outlined text-secondary">verified</span>
-            <div>
-              <h4 className="font-bold text-sm mb-1">Կարիերայի աջակցություն</h4>
-              <p className="text-xs opacity-70">Մեր կարիերայի մենեջերները և փորձնական հարցազրույցները կօգնեն Ձեզ ավելի արագ ստանալ աշխատանքի առաջարկ:</p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
@@ -838,9 +788,11 @@ const Pricing = () => {
       name: "MiNI",
       desc: "Արագ մեկնարկ QA-ում և IT-ում",
       price: "399 000 ֏",
+      monthly: "33 250",
+      oldMonthly: "55 416",
       features: [
-        "2 ամիս ուսուցում",
-        "8 ինտենսիվ դաս",
+        "4 ամիս ուսուցում",
+        "16 մոդուլ",
         "Տելեգրամ-չատ՝ տնային առաջադրանքների ստուգմամբ",
         "2 իրական նախագիծ պորտֆոլիոյի համար",
         "Պրոֆեսիոնալ ռեզյումեի ստեղծում",
@@ -851,10 +803,12 @@ const Pricing = () => {
       name: "BASE",
       desc: "Ամբողջական մասնագիտություն",
       price: "618 000 ֏",
+      monthly: "51 500",
+      oldMonthly: "85 833",
       popular: true,
       features: [
         "6 ամիս ուսուցում",
-        "24 մանրամասն դաս",
+        "24 մոդուլ",
         "Տելեգրամ-չատ՝ տնային առաջադրանքների ստուգմամբ",
         "4 իրական նախագիծ պորտֆոլիոյի համար",
         "Պրոֆեսիոնալ ռեզյումեի ստեղծում",
@@ -867,8 +821,12 @@ const Pricing = () => {
       name: "PRO MAX",
       desc: "Առավելագույն արդյունք",
       price: "810 000 ֏",
+      monthly: "67 500",
+      oldMonthly: "112 500",
       dark: true,
       features: [
+        "6 ամիս ուսուցում",
+        "24 մոդուլ",
         "BASE սակագնի բոլոր առավելությունները",
         "Էջերի ստեղծում Staff, LinkedIn, Upwork և hh.ru հարթակներում",
         "Նախապատրաստում հարցազրույցներին անգլերեն լեզվով",
@@ -911,8 +869,11 @@ const Pricing = () => {
               </ul>
               <div className="mt-auto">
                 <div className="mb-6">
-                  <div className="text-3xl font-black">{plan.price}</div>
-                  <div className="text-[10px] uppercase font-bold opacity-40">Միանվագ կամ տարաժամկետ վճարում</div>
+                  <div className="flex flex-col mb-1">
+                    <span className="text-sm opacity-50 line-through">{plan.oldMonthly} դրամ</span>
+                    <span className="text-3xl font-black">ամսական {plan.monthly} դրամ</span>
+                  </div>
+                  <div className="text-[10px] uppercase font-bold opacity-40">Ընդհանուր արժեքը՝ {plan.price}</div>
                 </div>
                 <button className="w-full py-4 bg-primary text-white rounded-xl font-bold shadow-lg shadow-primary/10 hover:brightness-110 active:scale-95 transition-all">
                   Ընտրել փաթեթը
@@ -921,32 +882,6 @@ const Pricing = () => {
             </div>
           ))}
         </div>
-        <div className="mt-16 p-8 bg-white rounded-3xl border-2 border-primary/20 shadow-sm max-w-4xl mx-auto text-center">
-          <h4 className="font-bold text-xl mb-4">Հարմարավետ տարաժամկետ վճարում գործընկեր բանկերից</h4>
-          <div className="flex flex-wrap justify-center gap-8 mb-6">
-            <div className="flex flex-col items-center">
-              <span className="text-lg font-black text-primary">Ամերիաբանկ</span>
-              <span className="text-[10px] uppercase opacity-50">0% կանխավճար</span>
-            </div>
-            <div className="flex flex-col items-center">
-              <span className="text-lg font-black text-primary">Իդրամ & Rocket Line</span>
-              <span className="text-[10px] uppercase opacity-50">Գնի՛ր հիմա, վճարի՛ր հետո</span>
-            </div>
-            <div className="flex flex-col items-center">
-              <span className="text-lg font-black text-primary">ՎՏԲ Բանկ</span>
-              <span className="text-[10px] uppercase opacity-50">Մինչև 24 ամիս ժամկետով</span>
-            </div>
-          </div>
-          <p className="text-xs text-on-surface-variant max-w-2xl mx-auto mb-6">
-            Մենք օգնում ենք բոլոր փաստաթղթերի ձևակերպման հարցում: Բանկի որոշումը գալիս է 1 աշխատանքային օրվա ընթացքում: Ձևակերպման համար անհրաժեշտ է միայն անձնագիր:
-          </p>
-          <button className="text-primary font-bold text-sm border-b-2 border-primary/20 hover:border-primary transition-all">
-            Հաշվարկել ամսական վճարը
-          </button>
-        </div>
-        <p className="text-[10px] text-center text-on-surface-variant/40 mt-8">
-          * Տարաժամկետ վճարման վերջնական պայմանները կախված են Ձեր վարկային պատմությունից և բանկի քաղաքականությունից:
-        </p>
       </div>
     </section>
   );
@@ -957,12 +892,10 @@ const Footer = () => {
     <footer className="bg-slate-900 text-white/60 py-12 px-6">
       <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12">
         <div className="col-span-2">
-          <img
-            alt="Gortsup"
-            className="h-8 mb-6 brightness-0 invert opacity-100"
-            src="https://lh3.googleusercontent.com/aida/ADBb0uhWGK-a5FYE4BxldVcsGO2WX4trYOGVn4cc7LrKHwnAKP8cQgTYB8_SCP6ZFDk-QPxm2O5Vod-Q3D639oHSxi-2Z8qdfhpAFPOK1Vz_SGJRpo35884RcuWf-3VS8HzHTfcwAp5rtIklrK9Hi0d1T7rIa85-AhwSO8ZZC61o6R8CPSRBbzl-D8HlgP0KYKgEJ-UWtKFVm0drjL0VKncPvUm926vYo4a42fcGdkFnfxmJelCbDgENm3l5T56N8G9_1DOByVCE0rLG5w"
-            referrerPolicy="no-referrer"
-          />
+          <div className="flex items-center gap-3 mb-6">
+            <div className="h-9 w-9 flex-shrink-0 bg-secondary rounded-xl" style={{ borderBottomLeftRadius: '50%' }}></div>
+            <span className="text-white font-extrabold text-xl tracking-tight">Gortsup Academy</span>
+          </div>
           <p className="text-sm max-w-xs mb-6">Gortsup Academy</p>
           <div className="flex gap-4">
             {["FB", "TG", "IN"].map((s) => (
@@ -1009,6 +942,5 @@ export {
   BenefitCalculator,
   Pricing,
   Footer,
-  Partners,
-  Teachers
+  Partners
 };
