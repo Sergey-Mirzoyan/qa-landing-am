@@ -13,6 +13,15 @@ import logoEpam from "../assets/logos/Effective_Programming_for_America_logo.svg
 import logoSynopsys from "../assets/logos/Synopsys_Logo.svg.png";
 import logoKrisp from "../assets/logos/Krisp_Logo.svg.png";
 
+// New fixed logos from user (Commented out until restored)
+/*
+import logo2gis from "../New logos/2gis-logo-1.svg";
+import logoTeamTelecom from "../New logos/Team_Telecom_Armenia.png.webp.png";
+import logoUcom from "../New logos/UCom-logo.png.webp.png";
+import logoArdshin from "../New logos/ardshin.svg";
+import logoSoftconstruct from "../New logos/softconstruct.svg";
+*/
+
 const Navbar = () => {
   return (
     <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl shadow-sm">
@@ -182,6 +191,13 @@ const Partners = () => {
     { name: "EPAM", logo: logoEpam },
     { name: "Synopsys", logo: logoSynopsys },
     { name: "Krisp", logo: logoKrisp },
+    /*
+    { name: "2GIS", logo: logo2gis },
+    { name: "Team Telecom", logo: logoTeamTelecom },
+    { name: "Ucom", logo: logoUcom },
+    { name: "Ardshinbank", logo: logoArdshin },
+    { name: "SoftConstruct", logo: logoSoftconstruct },
+    */
   ];
 
   return (
@@ -566,58 +582,95 @@ const Program = () => {
   type Module = {
     num: string; title: string; desc: string; accent?: boolean;
     skills: string[]; tools: string[]; artifacts: string[];
+    lessons: string[];
   };
 
   const modules: Module[] = [
     {
       num: "01",
-      title: "Ներածություն QA-ի աշխարհ",
-      desc: "Հիմունքներ, մշակման կենսապտույտը (SDLC) և թեստավորման տեսակները:",
-      skills: ["QA-ինժեների դերը թիմում", "Agile / Scrum / Kanban", "Բագի կենսապտույտ", "Smoke / Regression / Sanity"],
-      tools: ["Jira", "Confluence", "Trello", "Slack"],
-      artifacts: ["Թեստלաբակութային պլան", "Արձագանք կընդհակութային հաշվարկներ"],
+      title: "QA հիմունքներ և առաջին բագեր",
+      desc: "Բագի բնույթը, կյանքի ցիկլը և պրոֆեսիոնալ նկարագրությունը:",
+      skills: ["Բագի կյանքի ցիկլ", "Severity vs Priority", "ОР / ФР ձևաչափ", "Էկոնոմիկա և որակ"],
+      tools: ["Jira", "Test IT", "Trello"],
+      artifacts: ["10 բագ-ռեփորթ", "Դեկոմպոզիցիայի հաշվետվություն"],
+      lessons: [
+        "Բագի բնույթը և որակի փիլիսոփայությունը",
+        "Թեստ-քեյսերի արվեստը. Data-Driven մոտեցում",
+        "SDLC և բագ-թրեքինգ. ինչպես աշխատել թիմում",
+        "Թեստ-դիզայնի տեխնիկաներ. մաթեմատիկան ընդդեմ քաոսի",
+      ],
     },
     {
       num: "02",
-      title: "Թեստային փաստաթղթավորում",
-      desc: "Բագ-ռեպորտների, թեստ-քեյսերի և չեք-լիստերի ստեղծում:",
-      skills: ["Թեստ-դիզայնի տեխնիկաներ (EP, BVA, Pairwise)", "Բագ-ռեպորտ (Priority, Severity)", "UI/UX չեքլիստ", "TestRail կազմկերպ"],
-      tools: ["Jira", "Test IT", "TestRail", "Zephyr"],
-      artifacts: ["Թեստ-քեյս-լիստ", "Չեք-լիստ", "Բագ-ռեփորթ", "Թեղթղ. հաշվետվություններ"],
+      title: "QA-փաստաթղթավորում և պրոցեսներ",
+      desc: "Թեստ-քեյսեր, ստրատեգիաներ և մոբիլ թեստավորում:",
+      skills: ["Test Day", "Risk-based testing", "Black/White/Grey Box", "iOS/Android սպեցիֆիկա"],
+      tools: ["TestRail", "Figma", "Android Studio / Xcode"],
+      artifacts: ["Test Plan Lite", "Test Suite (20+ քեյս)", "Մոբիլ չեք-լիստ"],
+      lessons: [
+        "Թեստավորման ստրատեգիաներ և փաստաթղթավորում",
+        "DevTools. հայացք «կապոտի» տակ (Network & Console)",
+        "DevTools. վերստկա և DOM (Elements)",
+        "Մոբիլ թեստավորում. iOS և Android",
+      ],
     },
     {
       num: "03",
-      title: "API թեստավորում",
-      desc: "Խորացում Postman-ի և հաճախորդ-սերվեր ճարտարապետության մեջ:",
-      skills: ["HTTP մեթոդներ (GET, POST, PUT, DELETE)", "Status codes ու սխալների կարգ.", "JSON/XML հ/ու ձևաչ.", "Authorization (API Key, Bearer Token)", "REST vs SOAP, Swagger"],
-      tools: ["Postman", "Swagger", "Insomnia"],
-      artifacts: ["Postman Collection", "Ավտոմ. API թեստեր", "Test Report"],
+      title: "Տեխնիկական թեստավորում (API & DevTools)",
+      desc: "Charles Proxy, HTTP պրոտոկոլ, API (Postman) և Performance (Lighthouse):",
+      skills: ["Charles Proxy (Rewrite/Breaking)", "REST API (CRUD)", "HTTP Status Codes", "Performance audit"],
+      tools: ["Charles Proxy", "Postman", "Google Lighthouse", "Swagger"],
+      artifacts: ["Postman Collection", "Lighthouse Audit", "Charles սցենարներ"],
+      lessons: [
+        "Charles Proxy. իրականության փոփոխություն",
+        "Արտադրողականություն և հասանելիություն (Performance & A11y)",
+        "API թեստավորման հիմունքներ. աշխարհն առանց կոճակների",
+        "Postman. հարցումների և ավտոթեստերի վարպետություն",
+      ],
     },
     {
       num: "04",
-      title: "Տվյալների բազաներ (SQL)",
-      desc: "SQL-ի հիմունքները և աշխատանք տվյալների հետ:",
-      skills: ["SELECT, WHERE, GROUP BY, ORDER BY", "JOIN-ներ (INNER, LEFT, RIGHT)", "Տվ. բազայի կառուց.", "INSERT / UPDATE / DELETE", "SQL թ. դեպ. կիர."],
-      tools: ["DBeaver", "PostgreSQL", "MySQL"],
-      artifacts: ["SQL հ֊ումների հ/ու.", "Տ. բազ. valid. կ/ու."],
+      title: "QA Engineer-ը իրական մշակման մեջ",
+      desc: "Աշխատանք տվյալների բազաների հետ և սխալների որոնում լոգերում:",
+      skills: ["SQL (JOIN, GROUP BY)", "NoSQL (MongoDB)", "Լոգերի վերլուծություն (Kibana)", "Տվյալների վալիդացիա"],
+      tools: ["DBeaver", "PostgreSQL", "Kibana", "MongoDB"],
+      artifacts: ["SQL հարցումների հավաքածու", "Լոգերի վերլուծության հաշվետվություն"],
+      lessons: [
+        "Բարդ API. հեղինակավորում և անվտանգություն",
+        "SQL թեստավորողի համար. բազային մակարդակ",
+        "SQL. բարդ հարցումներ և ագրեգացիա",
+        "NoSQL և աշխատանք լոգերի հետ",
+      ],
     },
     {
       num: "05",
-      title: "QA Automation & AI",
-      desc: "Ավտոմատացում և AI-ի (Արհ. բանականություն) կիրառում արագ. համար:",
+      title: "Ավտոմատացում (Python + Selenium)",
+      desc: "Ծրագրավորման հիմունքներ և բրաուզերի ավտոմատացում:",
       accent: true,
-      skills: ["Python հիմ. (ֆ֊ններ, OOP, մոդ.)", "Selenium WebDriver / Playwright", "pytest շ/ամբ.", "ChatGPT / AI թ. գ/ելու", "CI/CD (GitHub Actions)"],
-      tools: ["Python", "Selenium", "Playwright", "pytest", "GitHub Actions", "ChatGPT"],
-      artifacts: ["Ավ/թ. թ. ն/ախ.", "CI/CD Pipeline", "AI-գ/աց. թ-քեյս."],
+      skills: ["Python (PEP8, Fixtures)", "Pytest framework", "Selenium WebDriver", "Page Object Pattern"],
+      tools: ["Python", "PyCharm / VS Code", "Pytest", "Selenium"],
+      artifacts: ["Ավտոթեստերի նախագիծ", "Allure Report"],
+      lessons: [
+        "Python QA-ի համար. սինտաքսի հիմունքներ",
+        "Pytest. թեստավորման ֆրեյմվորք",
+        "Selenium WebDriver. աշխատանք բրաուզերի հետ",
+        "Selenium Advanced. Page Object և կայունություն",
+      ],
     },
     {
       num: "06",
-      title: "Աշխատանքի տեղավորում",
-      desc: "Պատրաստում աշխատանքի առաջարկին և կարիերայի պլանավորում:",
+      title: "AI-QA Engineer և DevOps",
+      desc: "GitLab CI/CD, Docker և հետազոտական թեստավորում AI-ի օգնությամբ:",
       accent: true,
-      skills: ["LinkedIn-ի ու ռ/ումի օ/ացում", "HR մոք-հ/ազ. QA թ/ատ.", "Տեխ. հ/ազ. ա/ներով", "Բ. հաստ. որ. ա/ութ.", "Staff.am / LinkedIn / hh.ru"],
-      tools: ["LinkedIn", "Staff.am", "hh.ru", "Canva (CV)"],
-      artifacts: ["Կ/ած CV", "Պ/ֆոլ.", "LinkedIn-էջ"],
+      skills: ["CI/CD Pipeline", "Docker (Containers/Images)", "Exploratory Testing", "Charter-based testing"],
+      tools: ["GitLab CI", "Docker", "ChatGPT", "Jenkins"],
+      artifacts: ["Կարգավորված CI/CD Pipeline", "Docker-compose ֆայլ", "Exploratory Test Report"],
+      lessons: [
+        "CI/CD. անընդհատ ինտեգրացիա QA-ի համար",
+        "Docker և միջավայրեր թեստերի համար",
+        "Հետազոտական թեստավորում + Ֆինալ նախագիծ",
+        "Ֆինալ նախագծի պաշտպանություն",
+      ],
     },
   ];
 
@@ -668,22 +721,36 @@ const Program = () => {
                     className="px-6 pb-6 pt-2 border-t border-outline-variant/10 space-y-5"
                   >
                     <div>
-                      <div className="text-[10px] font-bold uppercase tracking-widest opacity-40 mb-2">Skills</div>
-                      <ul className="grid sm:grid-cols-2 gap-2">
-                        {item.skills.map((s, j) => (
-                          <li key={j} className="flex items-start gap-2 text-sm opacity-80">
-                            <span className={`${item.accent ? "text-secondary" : "text-primary"} text-xs mt-1`}>●</span>
-                            {s}
-                          </li>
+                      <div className="text-[10px] font-bold uppercase tracking-widest opacity-40 mb-3">Ուսումնական մոդուլներ</div>
+                      <div className="space-y-2 mb-4">
+                        {item.lessons.map((lesson, j) => (
+                          <div key={j} className="flex gap-3 items-center bg-surface-container-lowest p-3 rounded-xl border border-outline-variant/5">
+                            <span className={`w-6 h-6 rounded-full ${item.accent ? 'bg-secondary' : 'bg-primary'} text-white text-[10px] flex items-center justify-center flex-shrink-0 font-bold`}>{j + 1}</span>
+                            <span className="text-sm font-medium">{lesson}</span>
+                          </div>
                         ))}
-                      </ul>
+                      </div>
                     </div>
-                    <div>
-                      <div className="text-[10px] font-bold uppercase tracking-widest opacity-40 mb-2">Tools</div>
-                      <div className="flex flex-wrap gap-2">
-                        {item.tools.map((t, j) => (
-                          <span key={j} className={`text-xs font-bold px-3 py-1 rounded-full ${item.accent ? "bg-secondary/10 text-secondary" : "bg-primary/10 text-primary"}`}>{t}</span>
-                        ))}
+
+                    <div className="grid sm:grid-cols-2 gap-6 pt-2">
+                      <div>
+                        <div className="text-[10px] font-bold uppercase tracking-widest opacity-40 mb-2">Skills</div>
+                        <ul className="space-y-1">
+                          {item.skills.map((s, j) => (
+                            <li key={j} className="flex items-start gap-2 text-sm opacity-80">
+                              <span className={`${item.accent ? "text-secondary" : "text-primary"} text-xs mt-1`}>●</span>
+                              {s}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <div className="text-[10px] font-bold uppercase tracking-widest opacity-40 mb-2">Tools</div>
+                        <div className="flex flex-wrap gap-2">
+                          {item.tools.map((t, j) => (
+                            <span key={j} className={`text-xs font-bold px-3 py-1 rounded-full ${item.accent ? "bg-secondary/10 text-secondary" : "bg-primary/10 text-primary"}`}>{t}</span>
+                          ))}
+                        </div>
                       </div>
                     </div>
                     <div>
@@ -813,9 +880,8 @@ const Pricing = () => {
         "2 իրական նախագիծ պորտֆոլիոյի համար",
         "Ռեզյումեի ստեղծում",
         "Պրոֆիլ Staff, LinkedIn, hh.ru հարթակներում",
-        "QA Vocabulary — տեխնիկական անգլերեն",
+        "QA Vocabulary — տեխնիկական անգլերեն թեստավորողների համար",
         "Վեբինարների շարք աշխատանքի տեղավորման և պատվիրատուների փնտրման վերաբերյալ",
-        { text: "Մեր ստանդարտը", accent: true },
       ],
     },
     {
@@ -832,13 +898,12 @@ const Pricing = () => {
         "2 իրական նախագիծ պորտֆոլիոյի համար",
         "Ռեզյումեի ստեղծում",
         "Պրոֆիլ Staff, LinkedIn, Upwork, hh.ru հարթակներում",
-        "QA Vocabulary — տեխնիկական անգլերեն",
+        "QA Vocabulary — տեխնիկական անգլերեն թեստավորողների համար",
         "Հարցազրույցի նախապատրաստում անգլերենով",
         "Մինի-կուրս Upwork-ի վերաբերյալ",
         "Վեբինարների շարք աշխատանքի տեղավորման և պատվիրատուների փնտրման վերաբերյալ",
         "1–2 անհատական նախապատրաստում հարցազրույցին",
         "QA կարիերայի ստրատեգիա",
-        { text: "Մեր ստանդարտը", accent: true },
       ],
     },
   ];
@@ -865,11 +930,11 @@ const Pricing = () => {
               </div>
               <ul className="space-y-4 mb-10 flex-grow">
                 {plan.features.map((f, j) => (
-                  <li key={j} className={`flex items-start gap-3 text-sm ${typeof f === "object" && f.accent ? "font-semibold" : ""}`}>
-                    <span className={`material-symbols-outlined ${plan.dark || (typeof f === "object" && f.accent) ? "text-secondary" : "text-primary"} text-lg`}>
-                      {typeof f === "object" && f.accent ? "language" : "check_circle"}
+                  <li key={j} className="flex items-start gap-3 text-sm">
+                    <span className={`material-symbols-outlined ${plan.dark ? "text-secondary" : "text-primary"} text-lg`}>
+                      check_circle
                     </span>
-                    <span>{typeof f === "string" ? f : f.text}</span>
+                    <span>{f}</span>
                   </li>
                 ))}
               </ul>
@@ -922,7 +987,7 @@ const Footer = () => {
         <div>
           <h5 className="text-white font-bold mb-4 uppercase text-xs tracking-widest">Կոնտակտներ</h5>
           <div className="text-sm space-y-2">
-            <div>ք. Երևան, Ամիրյան փողոց 4/7</div>
+            <div>ք. Երևան, Եկմալյան 1</div>
             <div className="text-white font-bold">+374 (93) 128-696</div>
           </div>
         </div>
